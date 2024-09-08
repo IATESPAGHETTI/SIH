@@ -1,0 +1,190 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Warm gradient */
+    color: #333333;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease-in-out;
+}
+
+header, .intro, footer, .options-menu {
+    background-color: #f8d7da; /* Consistent soft pink color for all boxes */
+    color: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 700;
+    color: #721c24; /* Darker red text to complement the box color */
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+    font-weight: 300;
+    color: #b71c1c; /* Slightly dark red for header paragraph */
+}
+
+main {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.intro {
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+    transition: transform 0.3s ease;
+}
+
+.intro:hover {
+    transform: scale(1.02);
+}
+
+.intro p {
+    color: #333333;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Enhanced Quiz Button */
+.quiz-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #ff6f61; /* Coral button */
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button:hover {
+    background-color: #ff3f34; /* Darker coral for hover */
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: 300;
+    color: #555555;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #333333;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 1100;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Options Menu */
+.options-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-top: 70px;
+    text-align: left;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-270px);
+    border-radius: 0 8px 8px 0;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 12px 20px;
+    color: #333333;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: #ffffff;
+    transition: background-color 0.3s, color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu-button:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.menu-button.active {
+    background-color: #4285f4;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.menu-button i {
+    margin-right: 10px;
+    color: inherit;
+}
+
+/* Show menu when active */
+.menu-active .options-menu {
+    transform: translateX(0);
+}
+
+/* Add glow effect to the entire options menu when hovered */
+.menu-active .options-menu:hover {
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive menu for smaller screens */
+@media (max-width: 768px) {
+    .options-menu {
+        width: 80%;
+        left: -100%;
+        transform: translateX(0);
+    }
+
+    .menu-active .options-menu {
+        transform: translateX(100%);
+    }
+
+    .menu-toggle {
+        left: 10px;
+    }
+}
